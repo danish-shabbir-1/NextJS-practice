@@ -1,15 +1,13 @@
-import React from 'react'
+import Detail from "./Detail"
 
-const Dashboard = () => {
+const Dashboard = async () => {
 
-fetch('https://dummyjson.com/products')
-.then(res => res.json())
-.then(res => console.log(res))
+const res = await fetch('https://dummyjson.com/products')
+const result = await res.json()
 
-  return (
-    <div>
-    </div>
-  )
+console.log(result);
+
+  return <Detail  data={result}/>
 }
 
 export default Dashboard
